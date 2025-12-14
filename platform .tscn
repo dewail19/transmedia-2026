@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmrotiju26qtd"]
+
+[ext_resource type="Texture2D" uid="uid://cvrutmsmkl3qk" path="res://assets/Children Map/Map Children Final/Platforms/p1.png" id="1_od128"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vuopw"]
+radius = 10.992859
+height = 180.00589
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_od128")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(225.99998, -771)
+rotation = -1.5672913
+shape = SubResource("CapsuleShape2D_vuopw")
+one_way_collision = true
+one_way_collision_margin = 0.0
