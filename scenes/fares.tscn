@@ -203,5 +203,5 @@ sprite_frames = SubResource("SpriteFrames_ly1wv")
 frame_progress = 0.0374878
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-50, 12)
+position = Vector2(-61, 12)
 shape = SubResource("CapsuleShape2D_dpspy")
