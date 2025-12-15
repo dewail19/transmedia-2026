@@ -1,0 +1,76 @@
+[gd_scene load_steps=17 format=3 uid="uid://dqtfagie3q5mr"]
+
+[ext_resource type="Texture2D" uid="uid://dtshtidwhlbj3" path="res://Children Map/Map Children Final/1 sky.png" id="1_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://o8f24xgsl5b0" path="res://Children Map/Map Children Final/2 house bg.png" id="2_hqns4"]
+[ext_resource type="Texture2D" uid="uid://drk1ux6kpxw73" path="res://Children Map/Map Children Final/3 depth.png" id="3_hqns4"]
+[ext_resource type="Texture2D" uid="uid://lhw1bge4duu5" path="res://Children Map/Map Children Final/4 house middle g.png" id="4_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://dvwqr1lfcq3xf" path="res://Children Map/Map Children Final/multiply yarab.png" id="4_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://bws1mtsacb8sp" path="res://Children Map/Map Children Final/5 background.png" id="5_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://8vbtxdliwmdh" path="res://Children Map/Map Children Final/6 middle ground.png" id="6_d2bti"]
+[ext_resource type="Texture2D" uid="uid://g3g2wyep7n3p" path="res://Children Map/Map Children Final/7 foreground.png" id="7_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://cjggmd5kqwemk" path="res://Children Map/Map Children Final/8 front of ch.png" id="8_flf07"]
+[ext_resource type="PackedScene" uid="uid://ds01ris6abqt5" path="res://scenes/boat.tscn" id="9_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://ck8l70qfwf584" path="res://Children Map/Map Children Final/9 clouds.png" id="9_k73cj"]
+[ext_resource type="Texture2D" uid="uid://bwrscq2xi6r4w" path="res://Children Map/Map Children Final/lightng.png" id="11_0h7mo"]
+[ext_resource type="PackedScene" uid="uid://050q51eopcuy" path="res://scenes/nader.tscn" id="13_nr8wp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nr8wp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d2bti"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ta5nu"]
+blend_mode = 1
+
+[node name="enviroment" type="Node2D"]
+
+[node name="1" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_nr8wp")
+texture = ExtResource("1_ir8iy")
+
+[node name="2" type="Sprite2D" parent="1"]
+texture = ExtResource("2_hqns4")
+
+[node name="3" type="Sprite2D" parent="1/2"]
+texture = ExtResource("3_hqns4")
+
+[node name="3_5" type="Sprite2D" parent="1/2"]
+modulate = Color(0.23900445, 0.23900445, 0.23900445, 1)
+material = SubResource("CanvasItemMaterial_d2bti")
+texture = ExtResource("4_x0ka3")
+
+[node name="4" type="Sprite2D" parent="1/2"]
+texture = ExtResource("4_0h7mo")
+
+[node name="5" type="Sprite2D" parent="1/2/4"]
+texture = ExtResource("5_nr8wp")
+
+[node name="6" type="Sprite2D" parent="1/2/4/5"]
+texture = ExtResource("6_d2bti")
+
+[node name="7" type="Sprite2D" parent="1/2/4/5/6"]
+texture = ExtResource("7_ta5nu")
+
+[node name="StaticBody2D" parent="1/2/4/5/6/7" instance=ExtResource("9_0h7mo")]
+position = Vector2(-85, 4)
+
+[node name="8" type="Sprite2D" parent="1/2/4/5/6/7"]
+texture = ExtResource("8_flf07")
+
+[node name="9" type="Sprite2D" parent="1/2/4/5/6/7/8"]
+texture = ExtResource("9_k73cj")
+
+[node name="10" type="Sprite2D" parent="1/2/4/5/6/7/8/9"]
+modulate = Color(1, 1, 1, 0.7058824)
+material = SubResource("CanvasItemMaterial_ta5nu")
+texture = ExtResource("11_0h7mo")
+
+[node name="nader" parent="." instance=ExtResource("13_nr8wp")]
+position = Vector2(1646, -462)
+scale = Vector2(0.52332, 0.53595144)
+script = null
+
+[node name="Camera2D2" type="Camera2D" parent="nader"]
+position = Vector2(-1265.0002, -138.07224)
+scale = Vector2(-0.867619, 10.843183)
+zoom = Vector2(0.6, 0.6)
