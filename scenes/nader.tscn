@@ -181,6 +181,7 @@ radius = 57.0
 height = 348.0
 
 [node name="nader" type="CharacterBody2D"]
+position = Vector2(-20, 0)
 script = ExtResource("1_noci8")
 JUMP_VELOCITY = -600.0
 
@@ -215,5 +216,5 @@ autoplay = "default"
 frame_progress = 0.4475693
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 6)
+position = Vector2(-2, 7)
 shape = SubResource("CapsuleShape2D_wwt3f")

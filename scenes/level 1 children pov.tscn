@@ -71,6 +71,6 @@ scale = Vector2(0.52332, 0.53595144)
 script = null
 
 [node name="Camera2D2" type="Camera2D" parent="nader"]
-position = Vector2(-1289.8417, -143.66975)
+position = Vector2(-1308.9504, -143.66975)
 scale = Vector2(-0.867619, 10.843183)
 zoom = Vector2(0.6, 0.6)
