@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://dhosqa1pswb8i"]
+[gd_scene load_steps=29 format=3 uid="uid://dhosqa1pswb8i"]
 
+[ext_resource type="Script" uid="uid://bot22aifd3i78" path="res://scenes/fares.gd" id="1_1ye66"]
 [ext_resource type="Texture2D" uid="uid://c6x85ton0yt3u" path="res://character assets/fares.png" id="1_21l54"]
 [ext_resource type="Texture2D" uid="uid://cwprg13e84ugu" path="res://character assets/fares colored edited.png" id="3_wm7vr"]
 
@@ -176,10 +177,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpspy"]
-radius = 60.0
-height = 284.0
+radius = 25.0
+height = 212.0
 
 [node name="fares" type="CharacterBody2D"]
+script = ExtResource("1_1ye66")
+JUMP_VELOCITY = -800.0
 
 [node name="sprinting" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -195,7 +198,8 @@ frame_progress = 0.9517445
 
 [node name="colored running" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_md187")
-frame_progress = 0.9673889
+autoplay = "default"
+frame_progress = 0.9373483
 
 [node name="colored walking" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -203,5 +207,5 @@ sprite_frames = SubResource("SpriteFrames_ly1wv")
 frame_progress = 0.0374878
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-45, 9)
+position = Vector2(-30, 49)
 shape = SubResource("CapsuleShape2D_dpspy")

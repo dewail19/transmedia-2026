@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://domt710wudly5"]
 
 [ext_resource type="Texture2D" uid="uid://g3g2wyep7n3p" path="res://Children Map/Map Children Final/7 foreground.png" id="1_lml0l"]
-[ext_resource type="PackedScene" uid="uid://050q51eopcuy" path="res://scenes/nader.tscn" id="2_pmvu7"]
+[ext_resource type="PackedScene" uid="uid://dhosqa1pswb8i" path="res://scenes/fares.tscn" id="2_wbs7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lml0l"]
 size = Vector2(20, 536)
@@ -18,6 +18,7 @@ size = Vector2(683, 1656)
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_lml0l")
 
 [node name="wall" type="CollisionShape2D" parent="."]
@@ -120,13 +121,13 @@ polygon = PackedVector2Array(970, 513, 992, 505, 1420, 505, 1459, 482, 1465, 478
 position = Vector2(4181, -250)
 shape = SubResource("RectangleShape2D_oj1u5")
 
-[node name="nader" parent="." instance=ExtResource("2_pmvu7")]
-position = Vector2(1804.9999, -434)
-scale = Vector2(0.35, 0.35)
-script = null
-
-[node name="Camera2D" type="Camera2D" parent="nader"]
+[node name="fares" parent="." instance=ExtResource("2_wbs7d")]
 visible = false
-position = Vector2(-2391.4282, -299.99997)
-scale = Vector2(2.8571427, 2.8571427)
+position = Vector2(1779, -455)
+scale = Vector2(0.5, 0.5)
+JUMP_VELOCITY = -600.0
+
+[node name="Camera2D2" type="Camera2D" parent="fares"]
+position = Vector2(-1552, -186)
+scale = Vector2(-0.868, 10.843)
 zoom = Vector2(0.6, 0.6)

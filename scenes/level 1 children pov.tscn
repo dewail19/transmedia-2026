@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqtfagie3q5mr"]
+[gd_scene load_steps=21 format=3 uid="uid://dqtfagie3q5mr"]
 
 [ext_resource type="Texture2D" uid="uid://dtshtidwhlbj3" path="res://Children Map/Map Children Final/1 sky.png" id="1_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://o8f24xgsl5b0" path="res://Children Map/Map Children Final/2 house bg.png" id="2_hqns4"]
@@ -12,7 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://ds01ris6abqt5" path="res://scenes/boat.tscn" id="9_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://ck8l70qfwf584" path="res://Children Map/Map Children Final/9 clouds.png" id="9_k73cj"]
 [ext_resource type="Texture2D" uid="uid://bwrscq2xi6r4w" path="res://Children Map/Map Children Final/lightng.png" id="11_0h7mo"]
-[ext_resource type="PackedScene" uid="uid://050q51eopcuy" path="res://scenes/nader.tscn" id="13_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://djltn0janimaf" path="res://Children Map/Map Children full.png" id="13_kbc66"]
+[ext_resource type="PackedScene" uid="uid://domt710wudly5" path="res://scenes/foreground collision .tscn" id="14_lp6ye"]
+[ext_resource type="PackedScene" uid="uid://050q51eopcuy" path="res://scenes/nader.tscn" id="15_3e800"]
+[ext_resource type="PackedScene" uid="uid://dhosqa1pswb8i" path="res://scenes/fares.tscn" id="15_v42f7"]
+[ext_resource type="PackedScene" uid="uid://dmrotiju26qtd" path="res://scenes/platform .tscn" id="16_qcxrq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nr8wp"]
 
@@ -23,6 +27,7 @@ light_mode = 1
 blend_mode = 1
 
 [node name="enviroment" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-1718.0]
 
 [node name="1" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_nr8wp")
@@ -65,12 +70,44 @@ modulate = Color(1, 1, 1, 0.7058824)
 material = SubResource("CanvasItemMaterial_ta5nu")
 texture = ExtResource("11_0h7mo")
 
-[node name="nader" parent="." instance=ExtResource("13_nr8wp")]
-position = Vector2(1646, -462)
-scale = Vector2(0.52332, 0.53595144)
-script = null
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("13_kbc66")
+
+[node name="collisoon" parent="." instance=ExtResource("14_lp6ye")]
+position = Vector2(118, 1)
+
+[node name="fares" parent="." instance=ExtResource("15_v42f7")]
+position = Vector2(1770, -469)
+scale = Vector2(0.6, 0.6)
+
+[node name="platform 1" parent="." instance=ExtResource("16_qcxrq")]
+position = Vector2(-2659, 91)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform 1"]
+position = Vector2(2659, -87)
+polygon = PackedVector2Array(455, -658, 471, -662, 1015, -663, 1025, -659, 1016, -651, 988, -634, 980, -630, 970, -617, 958, -617, 942, -592, 928, -567, 893, -582, 879, -586, 855, -584, 843, -584, 812, -604, 792, -602, 779, -607, 698, -608, 666, -623, 619, -598, 535, -601, 493, -627, 486, -645, 469, -655)
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="platform 1"]
+position = Vector2(2659, -87)
+polygon = PackedVector2Array(-2487, -475, -2481, -478, -2393, -479, -2384, -474, -2401, -460, -2469, -462)
+one_way_collision = true
+
+[node name="nader" parent="." instance=ExtResource("15_3e800")]
+position = Vector2(1614, -462)
+scale = Vector2(0.5, 0.5)
+JUMP_VELOCITY = -800.0
 
 [node name="Camera2D2" type="Camera2D" parent="nader"]
-position = Vector2(-1308.9504, -143.66975)
-scale = Vector2(-0.867619, 10.843183)
+position = Vector2(-14, -22)
+rotation = -3.1415925
+scale = Vector2(0.5, -6.398)
 zoom = Vector2(0.6, 0.6)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("16_qcxrq")]
+position = Vector2(0, 4)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("16_qcxrq")]
+position = Vector2(349.00003, 1596.0001)
+scale = Vector2(1.3, 1.3)
