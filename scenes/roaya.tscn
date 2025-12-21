@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://bsosdct47xjvd"]
+
+[ext_resource type="Script" uid="uid://2k78g7stk2l6" path="res://scenes/CharacterController.gd" id="1_be3ph"]
+[ext_resource type="Texture2D" uid="uid://bh6k15kuw56rc" path="res://character assets/Roaya.png" id="1_oixd6"]
+[ext_resource type="Texture2D" uid="uid://dert3iet7pdd" path="res://character assets/roaya idle.png" id="2_e037e"]
+[ext_resource type="Texture2D" uid="uid://dmkrw41fegips" path="res://character assets/roaya jump.png" id="3_be3ph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdcm7"]
+atlas = ExtResource("1_oixd6")
+region = Rect2(0, 0, 400, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e037e"]
+atlas = ExtResource("1_oixd6")
+region = Rect2(400, 0, 400, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be3ph"]
+atlas = ExtResource("1_oixd6")
+region = Rect2(800, 0, 400, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7kor"]
+atlas = ExtResource("1_oixd6")
+region = Rect2(1200, 0, 400, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwpp7"]
+atlas = ExtResource("1_oixd6")
+region = Rect2(1600, 0, 400, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s16hl"]
+atlas = ExtResource("2_e037e")
+region = Rect2(384, 0, 384, 545)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54prn"]
+atlas = ExtResource("3_be3ph")
+region = Rect2(1152, 434, 384, 465)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s16hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdcm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e037e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_be3ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7kor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwpp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s16hl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54prn")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be3ph"]
+radius = 86.0
+height = 350.0
+
+[node name="Roaya" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_be3ph")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_s16hl")
+autoplay = "default"
+frame_progress = 0.9892819
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 30)
+shape = SubResource("CapsuleShape2D_be3ph")

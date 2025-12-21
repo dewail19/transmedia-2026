@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://domt710wudly5"]
+[gd_scene load_steps=6 format=3 uid="uid://domt710wudly5"]
 
 [ext_resource type="Texture2D" uid="uid://g3g2wyep7n3p" path="res://Children Map/Map Children Final/7 foreground.png" id="1_lml0l"]
-[ext_resource type="PackedScene" uid="uid://dhosqa1pswb8i" path="res://scenes/fares.tscn" id="2_wbs7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lml0l"]
 size = Vector2(20, 536)
@@ -120,14 +119,3 @@ polygon = PackedVector2Array(970, 513, 992, 505, 1420, 505, 1459, 482, 1465, 478
 [node name="last wall" type="CollisionShape2D" parent="."]
 position = Vector2(4181, -250)
 shape = SubResource("RectangleShape2D_oj1u5")
-
-[node name="fares" parent="." instance=ExtResource("2_wbs7d")]
-visible = false
-position = Vector2(1779, -455)
-scale = Vector2(0.5, 0.5)
-JUMP_VELOCITY = -600.0
-
-[node name="Camera2D2" type="Camera2D" parent="fares"]
-position = Vector2(-1552, -186)
-scale = Vector2(-0.868, 10.843)
-zoom = Vector2(0.6, 0.6)
