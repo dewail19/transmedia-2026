@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqtfagie3q5mr"]
+[gd_scene load_steps=23 format=3 uid="uid://dqtfagie3q5mr"]
 
 [ext_resource type="Texture2D" uid="uid://dtshtidwhlbj3" path="res://Children Map/Map Children Final/1 sky.png" id="1_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://o8f24xgsl5b0" path="res://Children Map/Map Children Final/2 house bg.png" id="2_hqns4"]
@@ -26,6 +26,9 @@ light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ta5nu"]
 blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcxrq"]
+size = Vector2(7763.5, 466)
 
 [node name="enviroment" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-1718.0]
@@ -73,7 +76,7 @@ material = SubResource("CanvasItemMaterial_ta5nu")
 texture = ExtResource("11_0h7mo")
 
 [node name="collisoon" parent="." instance=ExtResource("14_lp6ye")]
-position = Vector2(118, 1)
+position = Vector2(119, 5)
 collision_layer = 7
 collision_mask = 7
 
@@ -83,18 +86,22 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform 1"]
-position = Vector2(2659, -87)
+position = Vector2(2780, -87)
 polygon = PackedVector2Array(455, -658, 471, -662, 1015, -663, 1025, -659, 1016, -651, 988, -634, 980, -630, 970, -617, 958, -617, 942, -592, 928, -567, 893, -582, 879, -586, 855, -584, 843, -584, 812, -604, 792, -602, 779, -607, 698, -608, 666, -623, 619, -598, 535, -601, 493, -627, 486, -645, 469, -655)
 one_way_collision = true
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="platform 1"]
-position = Vector2(2659, -87)
+position = Vector2(2752, -142)
 polygon = PackedVector2Array(-2487, -475, -2481, -478, -2393, -479, -2384, -474, -2401, -460, -2469, -462)
 one_way_collision = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="platform 1"]
+position = Vector2(3173, -1396)
+shape = SubResource("RectangleShape2D_qcxrq")
+
 [node name="nader" parent="." instance=ExtResource("15_3e800")]
-position = Vector2(1417, -483)
-scale = Vector2(0.5, 0.5)
+position = Vector2(1447, -482)
+scale = Vector2(0.6, 0.6)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("16_qcxrq")]
 position = Vector2(0, 4)
@@ -110,11 +117,11 @@ target = NodePath("../nader")
 follow_smoothing = 100.0
 
 [node name="fares" parent="." node_paths=PackedStringArray("main_character") instance=ExtResource("15_v42f7")]
-position = Vector2(1611, -492)
+position = Vector2(1611.0001, -477.00003)
 scale = Vector2(0.6, 0.6)
 main_character = NodePath("../nader")
 
 [node name="Roaya" parent="." node_paths=PackedStringArray("main_character") instance=ExtResource("18_qcxrq")]
-position = Vector2(1805.0001, -507)
+position = Vector2(1737, -560)
 scale = Vector2(0.6, 0.6)
 main_character = NodePath("../fares")

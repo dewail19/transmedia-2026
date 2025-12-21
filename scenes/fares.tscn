@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://dhosqa1pswb8i"]
+[gd_scene load_steps=38 format=3 uid="uid://dhosqa1pswb8i"]
 
 [ext_resource type="Texture2D" uid="uid://c6x85ton0yt3u" path="res://character assets/fares.png" id="1_21l54"]
 [ext_resource type="Texture2D" uid="uid://cwprg13e84ugu" path="res://character assets/fares colored edited.png" id="3_wm7vr"]
 [ext_resource type="Texture2D" uid="uid://odnvoxhkjben" path="res://character assets/fares jump.png" id="4_13iss"]
+[ext_resource type="Texture2D" uid="uid://cbrhrev2qdetf" path="res://character assets/fares idle.png" id="4_dawha"]
 [ext_resource type="Script" uid="uid://2k78g7stk2l6" path="res://scenes/CharacterController.gd" id="4_gm3rs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21l54"]
@@ -111,13 +112,33 @@ region = Rect2(384, 538, 384, 538)
 atlas = ExtResource("3_wm7vr")
 region = Rect2(0, 538, 384, 538)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gm3rs"]
-atlas = ExtResource("3_wm7vr")
-region = Rect2(55, 0, 310, 540)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p1kx"]
+atlas = ExtResource("4_dawha")
+region = Rect2(296, 0, 308, 559)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dawha"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb7sy"]
+atlas = ExtResource("4_dawha")
+region = Rect2(604, 0, 308, 559)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbh7j"]
 atlas = ExtResource("4_13iss")
-region = Rect2(1152, 0, 384, 1080)
+region = Rect2(1536, 287, 378, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c68vu"]
+atlas = ExtResource("4_13iss")
+region = Rect2(1158, 287, 378, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dftu"]
+atlas = ExtResource("4_13iss")
+region = Rect2(780, 287, 378, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oyaq"]
+atlas = ExtResource("4_13iss")
+region = Rect2(402, 287, 378, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3pn4"]
+atlas = ExtResource("4_13iss")
+region = Rect2(24, 287, 378, 561)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_md187"]
 animations = [{
@@ -142,8 +163,11 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gm3rs")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_3p1kx")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_bb7sy")
 }],
 "loop": true,
 "name": &"idle",
@@ -151,7 +175,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dawha")
+"texture": SubResource("AtlasTexture_kbh7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c68vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dftu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oyaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3pn4")
 }],
 "loop": true,
 "name": &"jump",
@@ -224,9 +260,11 @@ sprite_frames = SubResource("SpriteFrames_pqxpn")
 frame_progress = 0.9517445
 
 [node name="colored running" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_md187")
 animation = &"jump"
 autoplay = "default"
+frame_progress = 0.8992319
 
 [node name="colored walking" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -234,5 +272,6 @@ sprite_frames = SubResource("SpriteFrames_ly1wv")
 frame_progress = 0.0374878
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 21)
+visible = false
+position = Vector2(-44, 16)
 shape = SubResource("CapsuleShape2D_dpspy")

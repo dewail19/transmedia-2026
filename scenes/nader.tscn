@@ -1,8 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://050q51eopcuy"]
+[gd_scene load_steps=38 format=3 uid="uid://050q51eopcuy"]
 
 [ext_resource type="Texture2D" uid="uid://jpsidqdbcqwg" path="res://character assets/nader.png" id="1_87ecu"]
 [ext_resource type="Script" uid="uid://2k78g7stk2l6" path="res://scenes/CharacterController.gd" id="1_wwt3f"]
 [ext_resource type="Texture2D" uid="uid://b6f01i0apolwh" path="res://character assets/nader colored edited.png" id="3_noci8"]
+[ext_resource type="Texture2D" uid="uid://dxwdanr7adito" path="res://character assets/nader idle.png" id="4_soifb"]
+[ext_resource type="Texture2D" uid="uid://c7nsp05yn07vs" path="res://character assets/nader jump jump .png" id="5_psaxw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wd6uh"]
 atlas = ExtResource("1_87ecu")
@@ -153,13 +155,33 @@ region = Rect2(377, 0, 377, 538)
 atlas = ExtResource("3_noci8")
 region = Rect2(0, 0, 377, 538)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wwt3f"]
-atlas = ExtResource("3_noci8")
-region = Rect2(55, 0, 310, 540)
+[sub_resource type="AtlasTexture" id="AtlasTexture_psaxw"]
+atlas = ExtResource("4_soifb")
+region = Rect2(1494, 544, 358, 525)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_soifb"]
-atlas = ExtResource("3_noci8")
-region = Rect2(384, 540, 384, 540)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmu1f"]
+atlas = ExtResource("4_soifb")
+region = Rect2(1136, 544, 358, 525)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbyoo"]
+atlas = ExtResource("5_psaxw")
+region = Rect2(1610, 274, 390, 616)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmevf"]
+atlas = ExtResource("5_psaxw")
+region = Rect2(1220, 274, 390, 616)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo62v"]
+atlas = ExtResource("5_psaxw")
+region = Rect2(830, 274, 390, 616)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq5wj"]
+atlas = ExtResource("5_psaxw")
+region = Rect2(440, 274, 390, 616)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d8a6"]
+atlas = ExtResource("5_psaxw")
+region = Rect2(50, 274, 390, 616)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ggmll"]
 animations = [{
@@ -184,8 +206,11 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wwt3f")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_psaxw")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_vmu1f")
 }],
 "loop": true,
 "name": &"idle",
@@ -193,7 +218,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_soifb")
+"texture": SubResource("AtlasTexture_hbyoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmevf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo62v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq5wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d8a6")
 }],
 "loop": true,
 "name": &"jump",
@@ -201,8 +238,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwt3f"]
-radius = 61.0
-height = 342.0
+radius = 44.0
+height = 238.0
 
 [node name="nader" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 texture_filter = 1
@@ -235,11 +272,14 @@ frame_progress = 0.009327444
 
 [node name="colored walking" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(2, 5)
+position = Vector2(30, -18.000004)
+scale = Vector2(0.7961538, 0.79951304)
 sprite_frames = SubResource("SpriteFrames_ggmll")
 animation = &"jump"
 autoplay = "default"
+frame_progress = 0.85927206
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 1)
+visible = false
+position = Vector2(17, 12)
 shape = SubResource("CapsuleShape2D_wwt3f")
