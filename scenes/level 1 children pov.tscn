@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqtfagie3q5mr"]
+[gd_scene load_steps=24 format=3 uid="uid://dqtfagie3q5mr"]
 
 [ext_resource type="Texture2D" uid="uid://dtshtidwhlbj3" path="res://Children Map/Map Children Final/1 sky.png" id="1_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://o8f24xgsl5b0" path="res://Children Map/Map Children Final/2 house bg.png" id="2_hqns4"]
@@ -12,12 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://ds01ris6abqt5" path="res://scenes/boat.tscn" id="9_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://ck8l70qfwf584" path="res://Children Map/Map Children Final/9 clouds.png" id="9_k73cj"]
 [ext_resource type="Texture2D" uid="uid://bwrscq2xi6r4w" path="res://Children Map/Map Children Final/lightng.png" id="11_0h7mo"]
+[ext_resource type="PackedScene" uid="uid://cnfdm5fkro2xr" path="res://scenes/ui/dialogueStarter.tscn" id="13_3mrvk"]
 [ext_resource type="PackedScene" uid="uid://domt710wudly5" path="res://scenes/foreground collision .tscn" id="14_lp6ye"]
 [ext_resource type="PackedScene" uid="uid://050q51eopcuy" path="res://scenes/nader.tscn" id="15_3e800"]
 [ext_resource type="PackedScene" uid="uid://dhosqa1pswb8i" path="res://scenes/fares.tscn" id="15_v42f7"]
 [ext_resource type="PackedScene" uid="uid://dmrotiju26qtd" path="res://scenes/platform .tscn" id="16_qcxrq"]
 [ext_resource type="Script" uid="uid://iy45edhe43ea" path="res://scenes/camera2D.gd" id="17_kbc66"]
 [ext_resource type="PackedScene" uid="uid://bsosdct47xjvd" path="res://scenes/roaya.tscn" id="18_qcxrq"]
+[ext_resource type="PackedScene" uid="uid://crip0fwgbux0r" path="res://scenes/ui/dialoguebox.tscn" id="19_det03"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nr8wp"]
 
@@ -118,3 +120,23 @@ main_character = NodePath("../nader")
 position = Vector2(1805.0001, -507)
 scale = Vector2(0.6, 0.6)
 main_character = NodePath("../fares")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Dialoguebox" parent="CanvasLayer/Control" instance=ExtResource("19_det03")]
+layout_mode = 1
+offset_top = -201.0
+
+[node name="DialogueStarter" parent="." instance=ExtResource("13_3mrvk")]
+position = Vector2(981, -449)
+conversation_file = "res://conversations/example.txt"
